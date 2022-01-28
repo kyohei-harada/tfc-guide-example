@@ -12,4 +12,10 @@ terraform {
   }
 
   required_version = ">= 0.14.0"
+  cloud {
+    organization = "e-grant"
+    workspaces {
+      name = "tfc-guide-example"
+    }
+  }
 }
