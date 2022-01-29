@@ -1,4 +1,11 @@
 provider "aws" {
+  default_tags {
+    tags = {
+      environment      = var.environment
+      service_code     = var.service_code
+      primary_consumer = var.primary_consumer
+    }
+  }
   region = var.region
 }
 
@@ -40,7 +47,6 @@ resource "aws_instance" "ubuntu" {
 resource "aws_key_pair" "kyohei" {
   key_name   = "kyohei.harada@ZK203379H"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDVTQN2e3esdzQ20UDday69mmMmimspDYc/ryv8R9B9EfpOjdr3p5js4aIn5aeOBWe5iO9KGhidK32jyqT9NNrGmL75RNLy2TcfVwSHz7RV/Ahwx5OuWj8Rzg6FEwwOEBB93JpvzsJK+OUJ1JQi/fZ8Ct+yyxQzGKj4FdwWKf63eui3j/ECnO4kygFnaDGLRkRDPvUsijvlVAFhX8z3ZZ33TnLhzuGwgEscVWjC0R9kcpXCG0ImkjQ2cZOmXFd1FZ70/zPmRlgEunzAGHyo2XerZRhExdpldC6n07C0UkD5nw+41hpedRcmjkDt97IIKTeMjx3JjI6/S8e5MxBITn/d kyohei.harada@ZK203379H"
-  tags       = var.test_tag
   lifecycle {
     create_before_destroy = true
   }
