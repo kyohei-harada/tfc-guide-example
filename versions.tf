@@ -15,7 +15,7 @@ terraform {
   cloud {
     organization = "e-grant"
     workspaces {
-      name = "tfc-guide-example"
+      name = "test_tfc-guide-example"
     }
   }
 }

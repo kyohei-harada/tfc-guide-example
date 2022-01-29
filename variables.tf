@@ -1,6 +1,6 @@
 variable "region" {
   description = "AWS region"
-  default     = "us-west-1"
+  default     = "us-east-1"
 }
 
 variable "instance_type" {
@@ -13,3 +13,9 @@ variable "instance_name" {
   default     = "Provisioned by Terraform"
 }
 
+variable "test_tag" {
+  type = map(any)
+  default = {
+    tag1 = "value1"
+  }
+}
